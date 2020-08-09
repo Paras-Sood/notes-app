@@ -7,21 +7,7 @@ const SingleNoteSummaryComponent = (props) => {
     
     const [newNoteText, setNewNoteText] = useState('')
 
-    const [isSelected, setSelection] = useState(false);
-
-    // useEffect(() => {firebase.database()
-    //     .ref(`/users/${loggedInUserId}/`)
-    //     .on('value', (completeNewData) => {
-
-    //         const newDataList = _.map(completeNewData.val(), (value, key) => {
-    //             // console.log("Value", value)
-    //             console.log("Key", key)
-    //             return {...value}
-    //         })
-
-    //         setData(newDataList.reverse())
-    //     }
-    // )}, [])    
+    const [isSelected, setSelection] = useState(false);    
 
     // const valueToDel=ref.once('value', function(snapshot) {
     //     snapshot.forEach(function(childSnapshot) {
