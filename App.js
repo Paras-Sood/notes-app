@@ -8,6 +8,8 @@ import LoginScreenComponent from './src/LoginScreenComponent';
 export default function App() {
   const [userLoggedIn, setUserLoggedIn] = useState(false)
   
+  const image = { uri: "https://www.invespcro.com/blog/images/blog-images/main.png" };
+  
   if(firebase.apps.length === 0){
     var firebaseConfig = {
     };
@@ -33,18 +35,13 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <LoginScreenComponent/>
+        <ImageBackground source={image} style={{flex:1,width:612,justifyContent:"center",marginLeft:0,resizeMode: "cover",start:80,marginEnd:20}}>
+          <LoginScreenComponent/>
+        </ImageBackground>
       </View>
     );
   }
 
-
-  return (
-    <View style={styles.container}>
-      {/* <NotesScreenComponent/> */}
-      <LoginScreenComponent/>
-    </View>
-  );
 }
 
 const styles = StyleSheet.create({
