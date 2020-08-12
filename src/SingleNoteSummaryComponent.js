@@ -124,7 +124,7 @@ const randomBackground = () => {
 const styles = StyleSheet.create({
     textProperties: {
         fontSize: 20,
-        margin:5,
+        margin:6,
     },
     textViewStyle: {
         height: 150,
