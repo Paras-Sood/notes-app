@@ -12,6 +12,7 @@ export default function App() {
   
   if(firebase.apps.length === 0){
     var firebaseConfig = {
+      //Firebase Api
       //Firebase Config
     };
     // Initialize Firebase
