@@ -13,13 +13,6 @@ export default function App() {
   
   if(firebase.apps.length === 0){
     var firebaseConfig = {
-      apiKey: "AIzaSyBw_ZO9tqQ_4rNhIcBGvYGgo-gQxnhjH4g",
-      authDomain: "react-native-todo-app-add41.firebaseapp.com",
-      databaseURL: "https://react-native-todo-app-add41.firebaseio.com",
-      projectId: "react-native-todo-app-add41",
-      storageBucket: "react-native-todo-app-add41.appspot.com",
-      messagingSenderId: "527082490744",
-      appId: "1:527082490744:web:0151d99740db7a457d568d"
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
