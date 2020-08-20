@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "todo-react-native",
-    "slug": "todo-react-native",
+    "name": "My Notes",
+    "slug": "My Notes",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/IconNoBg.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/NotesSp.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,7 +20,11 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/Icon1-removebg-preview.png"
+    },
+    "android": {
+      "package": "com.paras.Notes",
+      "versionCode": 1
     }
   }
 }
