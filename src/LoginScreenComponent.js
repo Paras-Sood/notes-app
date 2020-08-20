@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import {StyleSheet, View, Text, TextInput, Button, ImageBackground, Linking} from 'react-native';
+import {StyleSheet, View, Text, TextInput, ToastAndroid, Linking} from 'react-native';
 import firebase from 'firebase';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Entypo';
 import Hyperlink from 'react-native-hyperlink';
-import { blue } from 'color-name';
+import Expo from 'expo';
+
 const LoginScreenComponent = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     // const image = { uri: "https://www.invespcro.com/blog/images/blog-images/main.png" };
-    return <View style={{alignItems:"center",justifyContent:"center",marginEnd:130}}>
+    return <View style={{alignItems:"center",justifyContent:"center"}}>
         {/* <ImageBackground source={image} style={{flex:1,width:612,justifyContent:"center",marginLeft:0,resizeMode: "cover"}}> */}
             <View style={{justifyContent:"center",alignItems:"center"}}>
                 <Text style={{marginLeft:-245}}> Email: </Text>
@@ -40,9 +41,15 @@ const LoginScreenComponent = () => {
                         name="login"
                         backgroundColor="#3b5998"
                         style={{borderRadius:30,}}
-                        onPress={() => firebase.auth().signInWithEmailAndPassword(email, password)}>
-                            Login In
-                    </Icon.Button>
+                        onPress={() =>{
+                        // if(email!=='' && password!=='')
+                        // {
+                            firebase.auth().signInWithEmailAndPassword(email, password)
+                            .catch((error)=>{
+                                ToastAndroid.show(error.message,ToastAndroid.SHORT)
+                            })
+                        // }
+                        }}>Login In</Icon.Button>
                     </View>
                     
                     <View style={styles.buttonStyle}>
@@ -57,27 +64,19 @@ const LoginScreenComponent = () => {
                                         setEmail("")
                                         setPassword("")
                                     })
-                                    .catch(() => {
-                                        console.log("Some error happened")
+                                    .catch((error) => {
+                                        ToastAndroid.show(error.message,ToastAndroid.SHORT)
                                     })
-
                             }
                         }
                     >Signup</Icon2.Button>
                     </View>
                 </View>
             </View>
-            <View style={{borderWidth:0.5,borderRadius:50,padding:12,top:200}}>
-                <Hyperlink linkDefault={true}>
-                    <View flexDirection="row">
-                        <Text>Give your Feedback </Text><Text style={{textDecorationLine:"underline",color: '#00f'}} onPress={()=>{Linking.openURL('https://forms.gle/W32rnj6Bup1LVmFB8')}}>Here</Text>
-                    </View>
-                </Hyperlink>
-            </View>
         {/* </ImageBackground> */}
     </View>
 }
-
+// borderWidth:0.5,borderRadius:50,padding:12,top:200
 export default LoginScreenComponent;
 const styles=StyleSheet.create({
     textInputStyle:{
